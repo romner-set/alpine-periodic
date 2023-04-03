@@ -1,0 +1,1 @@
+docker run -it --rm --net=host --volume ~/.config/SteamPrefill:/Config tpill90/steam-lancache-prefill:latest prefill
