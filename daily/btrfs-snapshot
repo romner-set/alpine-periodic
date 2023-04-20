@@ -13,9 +13,9 @@ for sv in @ @root @music @encrypted
     for year in /.snapshots/$sv/*
       for month in $year/*
         if test $month = $current_month_dir && test (ls $month | count) -gt 7
-          btrfs subvolume delete (ls $month | head -1)
+          btrfs subvolume delete $month/(ls $month | head -1)
         else if test (ls $month | head -n-1 | count) -ne 0
-          btrfs subvolume delete (ls $month | head -n-1)
+          btrfs subvolume delete $month/(ls $month | head -n-1)
         end
       end
     end
